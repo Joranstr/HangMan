@@ -338,3 +338,10 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+*.cache
+*.pdb
+*.dll
+*.cache
+*.pdb
+*.dll
+.vs/HangMan/v16/.suo
