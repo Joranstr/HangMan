@@ -7,7 +7,6 @@ namespace HangMan
     {
         static void Main(string[] args)
         {
-            var wordList = new Words();
             var gameBoard = new GameBoard();
             var wordSelector = new Words();
             var word = wordSelector.SelectRandomWord();
@@ -18,7 +17,8 @@ namespace HangMan
                 gameBoard.DrawGallow();
                 gameBoard.DrawLetterLine(charArrayOfWord);
                 gameBoard.GuessLetter(charArrayOfWord);
-            } while (true);
+                gameBoard.HasWonOrLost(charArrayOfWord);
+            } while (gameBoard.ContinueGame);
             
         }
 
