@@ -1,0 +1,13 @@
+X:\Gitrepo\HangMan2\HangMan\bin\Debug\netcoreapp3.1\HangMan.exe
+X:\Gitrepo\HangMan2\HangMan\bin\Debug\netcoreapp3.1\HangMan.deps.json
+X:\Gitrepo\HangMan2\HangMan\bin\Debug\netcoreapp3.1\HangMan.runtimeconfig.json
+X:\Gitrepo\HangMan2\HangMan\bin\Debug\netcoreapp3.1\HangMan.runtimeconfig.dev.json
+X:\Gitrepo\HangMan2\HangMan\bin\Debug\netcoreapp3.1\HangMan.dll
+X:\Gitrepo\HangMan2\HangMan\bin\Debug\netcoreapp3.1\HangMan.pdb
+X:\Gitrepo\HangMan2\HangMan\obj\Debug\netcoreapp3.1\HangMan.csprojAssemblyReference.cache
+X:\Gitrepo\HangMan2\HangMan\obj\Debug\netcoreapp3.1\HangMan.AssemblyInfoInputs.cache
+X:\Gitrepo\HangMan2\HangMan\obj\Debug\netcoreapp3.1\HangMan.AssemblyInfo.cs
+X:\Gitrepo\HangMan2\HangMan\obj\Debug\netcoreapp3.1\HangMan.csproj.CoreCompileInputs.cache
+X:\Gitrepo\HangMan2\HangMan\obj\Debug\netcoreapp3.1\HangMan.dll
+X:\Gitrepo\HangMan2\HangMan\obj\Debug\netcoreapp3.1\HangMan.pdb
+X:\Gitrepo\HangMan2\HangMan\obj\Debug\netcoreapp3.1\HangMan.genruntimeconfig.cache
