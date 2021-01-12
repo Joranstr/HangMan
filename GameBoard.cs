@@ -55,10 +55,17 @@ namespace HangMan
 
         public void DrawLetterLine(Char[] word)
         {
-            foreach (var letter in word)
+            for (int i = 0; i < word.Length; i++)
             {
-                Console.Write(letter);
-                //Console.Write("_ ");
+                if (i <CorrectGuesses)
+                {
+                    Console.Write(word[i]);
+                }
+                else
+                {
+                    Console.Write("_ ");
+                }
+                
             }
 
             Console.WriteLine();
@@ -70,7 +77,6 @@ namespace HangMan
             if (!GuesedCorrectLetter(word, guess))
             {
                 WrongGuesses++;
-                //DrawNextHangManPart();
             }
             else
             {
@@ -81,11 +87,6 @@ namespace HangMan
         private bool GuesedCorrectLetter(char[] word, string guess)
         {
             return guess.Equals(word[CorrectGuesses].ToString()) ;
-        }
-
-        private void DrawNextHangManPart()
-        {
-            throw new NotImplementedException();
         }
 
     }
