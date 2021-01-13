@@ -77,17 +77,17 @@ namespace HangMan
         internal void GuessLetter(Char[] word)
         {
             var guess = Console.ReadLine();
-            if (!GuesedCorrectLetter(word, guess))
-            {
-                _wrongGuesses++;
-            }
-            else
+            if (CorrectLetterGuess(word, guess))
             {
                 _correctGuesses++;
             }
+            else
+            {
+                _wrongGuesses++;
+            }
         }
 
-        private bool GuesedCorrectLetter(char[] word, string guess)
+        private bool CorrectLetterGuess(char[] word, string guess)
         {
             return guess.Equals(word[_correctGuesses].ToString()) ;
         }
