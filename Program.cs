@@ -21,7 +21,6 @@ namespace HangMan
             } while (gameBoard.ContinueGame);
             
         }
-
         
     }
 }
