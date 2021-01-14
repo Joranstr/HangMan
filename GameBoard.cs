@@ -107,7 +107,7 @@ namespace HangMan
             if (_wrongGuesses == 6)
             {
                 Console.Clear();
-                Console.WriteLine("Player has lost!");
+                Console.WriteLine($"Player has lost! the word was {WordChars.ToString()}");
                 NewGame();
             }
         }
@@ -116,6 +116,7 @@ namespace HangMan
         {
             Console.WriteLine("Do you wont to start new game? y/n");
             var restartAnswer = Console.ReadLine();
+            
             if (restartAnswer == "y")
             {
                 _correctGuesses = 0;
@@ -123,7 +124,7 @@ namespace HangMan
                 GetWordForGame();
                 
             }
-            else if (restartAnswer == "n")
+            if (restartAnswer == "n")
             {
                 ContinueGame = false;
             }
