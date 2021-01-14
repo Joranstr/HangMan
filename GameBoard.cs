@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -79,28 +81,21 @@ namespace HangMan
         {
             var guess = Console.ReadLine();
             
-            if (CorrectLetterGuess(guess))
-            {
-                _correctGuesses.Add(guess);
-            }
-            else
+            if (!AddLetterIfGeuessedCorrect(guess))
             {
                 _wrongGuesses++;
             }
         }
 
-        private bool CorrectLetterGuess(string guess)
+        private void AddLetterIfGeuessedCorrect(string guess)
         {
             var guessedChar = new List<string>();
+            
             foreach (var wordChar in WordChars)
             {
-                if (wordChar.Equals(guess))
-                {
+                if (wordChar.Equals(guess.ToCharArray()))
                     _correctGuesses.Add(guess);
-                }
-                
             }
-            return guess.Equals(WordChars[_correctGuesses].ToString()) ;
         }
 
         public void HasWonOrLost()
