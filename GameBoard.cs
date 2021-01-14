@@ -8,7 +8,7 @@ namespace HangMan
     class GameBoard
     {
         private int _wrongGuesses = 0;
-        private int _correctGuesses = 0;
+        private List<string> _correctGuesses;
         public bool ContinueGame = true;
         public char[] WordChars;
 
@@ -81,7 +81,7 @@ namespace HangMan
             
             if (CorrectLetterGuess(guess))
             {
-                _correctGuesses++;
+                _correctGuesses.Add(guess);
             }
             else
             {
@@ -91,6 +91,15 @@ namespace HangMan
 
         private bool CorrectLetterGuess(string guess)
         {
+            var guessedChar = new List<string>();
+            foreach (var wordChar in WordChars)
+            {
+                if (wordChar.Equals(guess))
+                {
+                    _correctGuesses.Add(guess);
+                }
+                
+            }
             return guess.Equals(WordChars[_correctGuesses].ToString()) ;
         }
 
@@ -107,7 +116,7 @@ namespace HangMan
             if (_wrongGuesses == 6)
             {
                 Console.Clear();
-                Console.WriteLine($"Player has lost! the word was {WordChars.ToString()}");
+                Console.WriteLine($"Player has lost!");
                 NewGame();
             }
         }
