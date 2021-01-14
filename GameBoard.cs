@@ -10,6 +10,7 @@ namespace HangMan
         private int _wrongGuesses = 0;
         private int _correctGuesses = 0;
         public bool ContinueGame = true;
+        public char[] WordChars;
 
         public void DrawGallow()
         {
@@ -56,13 +57,13 @@ namespace HangMan
 
         }
 
-        public void DrawLetterLine(Char[] word)
+        public void DrawLetterLine()
         {
-            for (int i = 0; i < word.Length; i++)
+            for (int i = 0; i < WordChars.Length; i++)
             {
                 if (i <_correctGuesses)
                 {
-                    Console.Write(word[i]);
+                    Console.Write(WordChars[i]);
                 }
                 else
                 {
@@ -74,10 +75,11 @@ namespace HangMan
             Console.WriteLine();
         }
 
-        internal void GuessLetter(Char[] word)
+        internal void GuessLetter()
         {
             var guess = Console.ReadLine();
-            if (CorrectLetterGuess(word, guess))
+            
+            if (CorrectLetterGuess(guess))
             {
                 _correctGuesses++;
             }
@@ -87,14 +89,14 @@ namespace HangMan
             }
         }
 
-        private bool CorrectLetterGuess(char[] word, string guess)
+        private bool CorrectLetterGuess(string guess)
         {
-            return guess.Equals(word[_correctGuesses].ToString()) ;
+            return guess.Equals(WordChars[_correctGuesses].ToString()) ;
         }
 
-        public void HasWonOrLost(char[] word)
+        public void HasWonOrLost()
         {
-            if (_correctGuesses == word.Length)
+            if (_correctGuesses == WordChars.Length)
             {
                 Console.Clear();
                 Console.WriteLine("Player has won!");
@@ -110,23 +112,34 @@ namespace HangMan
             }
         }
 
-        private void NewGame()
+        public void NewGame()
         {
-            Console.WriteLine("Do you wont to restart? y/n");
+            Console.WriteLine("Do you wont to start new game? y/n");
             var restartAnswer = Console.ReadLine();
             if (restartAnswer == "y")
             {
-                Console.WriteLine("test1");
-                //_correctGuesses = 0;
-                //_wrongGuesses = 0;
+                _correctGuesses = 0;
+                _wrongGuesses = 0;
+                GetWordForGame();
                 
             }
             else if (restartAnswer == "n")
             {
                 ContinueGame = false;
             }
+
+            if (restartAnswer== "")
+            {
+                Console.Clear();
+                NewGame();
+            }
             
-            
+        }
+
+        private void GetWordForGame()
+        {
+            var wordList = new Words();
+            WordChars = wordList.SelectRandomWord();
         }
     }
 }

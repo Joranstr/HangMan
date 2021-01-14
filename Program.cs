@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 
 namespace HangMan
 {
@@ -8,19 +9,18 @@ namespace HangMan
         static void Main(string[] args)
         {
             var gameBoard = new GameBoard();
-            var wordSelector = new Words();
-            var word = wordSelector.SelectRandomWord();
-            var charArrayOfWord = word.ToCharArray();
+            gameBoard.NewGame();
+            
 
             do
             {
                 gameBoard.DrawGallow();
-                gameBoard.DrawLetterLine(charArrayOfWord);
-                gameBoard.GuessLetter(charArrayOfWord);
-                gameBoard.HasWonOrLost(charArrayOfWord);
+                gameBoard.DrawLetterLine();
+                gameBoard.GuessLetter();
+                gameBoard.HasWonOrLost();
             } while (gameBoard.ContinueGame);
             
         }
-        
+
     }
 }

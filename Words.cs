@@ -11,11 +11,12 @@ namespace HangMan
             "test", "list", "array","name" 
         };
 
-        public string SelectRandomWord()
+        public char[] SelectRandomWord()
         {
             var random = new Random();
             var word = wordList[random.Next(minValue:0,maxValue:wordList.Count-1)];
-            return word;
+            var wordInChars = word.ToCharArray();
+            return wordInChars;
         }
     }
 }
