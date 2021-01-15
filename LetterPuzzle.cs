@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace HangMan
+{
+    class LetterPuzzle
+    {
+        private string _correctLetters;
+        private char[] _guessedLetters;
+        public int WrongGuesses { get; private set; }
+        public bool HasWon => _correctLetters == new string(_guessedLetters);
+
+        public LetterPuzzle(string correctLetters)
+        {
+            _correctLetters = correctLetters;
+            _guessedLetters = Enumerable.Repeat('_', correctLetters.Length).ToArray();
+        }
+        public void Draw()
+        {
+            Console.WriteLine(_guessedLetters);
+        }
+        internal void Guess(char guess)
+        {
+            var hasMatch = false;
+            
+            for (int i = 0; i < _correctLetters.Length; i++)
+            {
+                
+                if (_correctLetters[i] == guess)
+                {
+                    _guessedLetters[i] = guess;
+                    hasMatch = true;
+                }
+            }
+
+            if (!hasMatch)
+            {
+                WrongGuesses++;
+            }
+        }
+
+        public void ShowHasWonOrLost()
+        {
+            if (HasWon || WrongGuesses== 6)
+            {
+                Console.WriteLine(HasWon ? "Player has won" : "Player Has lost");
+            }
+        }
+    }
+}

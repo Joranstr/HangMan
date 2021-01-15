@@ -8,17 +8,11 @@ namespace HangMan
     {
         static void Main(string[] args)
         {
-            var gameBoard = new GameBoard();
-            gameBoard.NewGame();
-            
-
-            do
+            var game = new Game();
+            while (game.NewGame())
             {
-                gameBoard.DrawGallow();
-                gameBoard.DrawLetterLine();
-                gameBoard.GuessLetter();
-                gameBoard.HasWonOrLost();
-            } while (gameBoard.ContinueGame);
+                game.RunOneRound();
+            }
             
         }
 
