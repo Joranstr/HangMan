@@ -17,10 +17,19 @@ namespace HangMan
             _correctLetters = correctLetters;
             _guessedLetters = Enumerable.Repeat('_', correctLetters.Length).ToArray();
         }
-        public void Draw()
+        public void DrawLetterLine()
         {
-            Console.WriteLine(_guessedLetters);
+            for (int i = 0; i < _guessedLetters.Length; i++)
+            {
+                Console.Write(_guessedLetters[i]);
+                if (_guessedLetters[i]== '_')
+                {
+                    Console.Write(' ');
+                }
+            }
+            Console.WriteLine();
         }
+        
         internal void Guess(char guess)
         {
             var hasMatch = false;

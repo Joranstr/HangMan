@@ -22,7 +22,7 @@ namespace HangMan
             while (_letterPuzzle.WrongGuesses < 6 && !_letterPuzzle.HasWon)
             {
                 _gallow.Draw(_letterPuzzle.WrongGuesses);
-                _letterPuzzle.Draw();
+                _letterPuzzle.DrawLetterLine();
                 var guessStr = Console.ReadLine();
                 
                 if (!guessStr.Equals(""))
@@ -32,7 +32,7 @@ namespace HangMan
                 }
             }
             _gallow.Draw(_letterPuzzle.WrongGuesses);
-            _letterPuzzle.Draw();
+            _letterPuzzle.DrawLetterLine();
             _letterPuzzle.ShowHasWonOrLost();
         }
 
