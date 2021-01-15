@@ -23,6 +23,7 @@ namespace HangMan
             {
                 return new List<string>() { " _____", " |   |", " |", " |", " |", "_|__", "", "" };
             }
+            
             if (wrongGuesses == 1)
             {
                 return new List<string>() { " _____", " |   |", " |   O", " |", " |", "_|__", "", "" };
@@ -32,23 +33,23 @@ namespace HangMan
             {
                 return new List<string>() { " _____", " |   |", " |   O", " |   |", " |", "_|__", "", "" };
             }
+            
             if (wrongGuesses == 3)
             {
                 return new List<string>() { " _____", " |   |", " |   O", " |  /|", " |", "_|__", "", "" };
             }
+            
             if (wrongGuesses == 4)
             {
                 return new List<string>() { " _____", " |   |", " |   O", " |  /|\\", " |", "_|__", "", "" };
             }
+            
             if (wrongGuesses == 5)
             {
                 return new List<string>() { " _____", " |   |", " |   O", " |  /|\\", " |   /", "_|__", "", "" };
             }
-            else
-            {
-                return new List<string>() { " _____", " |   |", " |   O", " |  /|\\", " |   /\\", "_|__", "", "" };
-            }
-
+            
+            return new List<string>() { " _____", " |   |", " |   O", " |  /|\\", " |   /\\", "_|__", "", "" };
         }
     }
 }
