@@ -19,7 +19,7 @@ namespace HangMan
 
         public void RunOneRound()
         {
-            while (_letterPuzzle.WrongGuesses < 6 && !_letterPuzzle.HasWon)
+            while (!_letterPuzzle.HasWonOrLost())
             {
                 _gallow.Draw(_letterPuzzle.WrongGuesses);
                 _letterPuzzle.DrawLetterLine();
