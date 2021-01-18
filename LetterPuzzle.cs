@@ -22,11 +22,11 @@ namespace HangMan
             // Lagde For løkke for å dele opp orde så det syns hvor mange bokstaver som er i orde
             for (int i = 0; i < _guessedLetters.Length; i++)
             {
-                Console.Write(_guessedLetters[i]);
-                if (_guessedLetters[i]== '_')
-                {
-                    Console.Write(' ');
-                }
+                Console.Write(_guessedLetters[i]=='_'? _guessedLetters[i]+' ': _guessedLetters[i]);
+                //if (_guessedLetters[i]== '_')
+                //{
+                //    //Console.Write(' ');
+                //}
             }
             Console.WriteLine();
         }
